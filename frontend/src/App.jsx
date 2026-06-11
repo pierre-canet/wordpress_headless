@@ -1,11 +1,17 @@
 import { useState } from "react";
-import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Posts from "./components/Posts/Posts";
 
 function App() {
-  fetch("/wp-json/wp/v2/posts")
-    .then((response) => response.json())
-    .then((posts) => console.log(posts));
-  return <></>;
+  return (
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Posts />} />
+        </Routes>
+      </Router>
+    </>
+  );
 }
 
 export default App;
