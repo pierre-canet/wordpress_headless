@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { fetchPosts } from "../../api-handler";
+import { fetchPosts, fetchSinglePost } from "../../api-handler";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
@@ -23,16 +23,15 @@ const Posts = () => {
   if (loading) {
     return <p>Chargement...</p>;
   }
-
+  console.log(posts);
   return (
     <div>
       {posts.map((post) => (
         <article key={post.id}>
           <h2>{post.title.rendered}</h2>
-
           <div
             dangerouslySetInnerHTML={{
-              __html: post.excerpt.rendered,
+              __html: post.content.rendered,
             }}
           />
         </article>
