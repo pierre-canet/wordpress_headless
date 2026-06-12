@@ -20,9 +20,6 @@ article {
   width: 98%;
   margin: auto;
   background-color: white;
-  @media screen and (min-width: 900px) {
-    width: 90%;
-  }
 }
 h2 {
   color: #c9a227;
@@ -40,11 +37,6 @@ h2 {
   color: #e0e0e0;
   width: 80vw;
   font-size: 1rem;
-  @media screen and (min-width: 900px) {
-    font-size: 2rem;
-    padding: 5px;
-    margin: 2rem auto;
-  }
 }
 .post-content img {
   max-width: 80%;
@@ -57,7 +49,18 @@ h2 {
 }
 .see-more-link {
   font-size: 1rem;
-  @media screen and (min-width: 900px) {
+}
+
+@media screen and (min-width: 900px) {
+  article {
+    width: 90%;
+  }
+  .post-content p {
+    font-size: 2rem;
+    padding: 5px;
+    margin: 2rem auto;
+  }
+  .see-more-link {
     font-size: 2rem;
   }
 }
