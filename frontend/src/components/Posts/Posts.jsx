@@ -35,7 +35,9 @@ const Posts = () => {
             }}
             className="post-content"
           />
-          <a href={`/${post.id}`}>Lire l'article</a>
+          <a href={`/${post.id}`} className="see-more-link">
+            Lire l'article
+          </a>
         </article>
       ))}
     </div>
