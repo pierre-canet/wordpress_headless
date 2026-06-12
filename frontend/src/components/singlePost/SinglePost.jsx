@@ -28,13 +28,14 @@ const SinglePost = () => {
     return <p>Article introuvable</p>;
   }
   return (
-    <div>
+    <div className="posts-container">
       <article key={post.id}>
         <h2>{post.title.rendered}</h2>
         <div
           dangerouslySetInnerHTML={{
             __html: post.content.rendered,
           }}
+          className="post-content"
         />
       </article>
     </div>

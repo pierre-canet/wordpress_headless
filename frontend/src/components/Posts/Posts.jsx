@@ -24,7 +24,7 @@ const Posts = () => {
     return <p>Chargement...</p>;
   }
   return (
-    <div>
+    <div className="posts-container">
       {posts.map((post) => (
         <article key={post.id}>
           <h2>{post.title.rendered}</h2>
@@ -33,7 +33,9 @@ const Posts = () => {
             dangerouslySetInnerHTML={{
               __html: post.content.rendered,
             }}
+            className="post-content"
           />
+          <a href={`/${post.id}`}>Lire l'article</a>
         </article>
       ))}
     </div>
