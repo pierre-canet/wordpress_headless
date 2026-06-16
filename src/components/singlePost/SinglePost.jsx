@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { fetchSinglePost } from "../../api-handler";
-import { useParams } from "react-router-dom";
+//import { useParams } from "react-router-dom";
 
-const SinglePost = () => {
-  const { id } = useParams();
+function SinglePost({ postId }) {
   const [post, setPost] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const loadPosts = async () => {
       try {
-        const data = await fetchSinglePost(id);
+        const data = await fetchSinglePost(postId);
         setPost(data);
       } catch (error) {
         console.error(error);
@@ -40,6 +39,6 @@ const SinglePost = () => {
       </article>
     </div>
   );
-};
+}
 
 export default SinglePost;

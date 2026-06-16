@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { fetchPosts } from "../../api-handler";
 
-const Posts = () => {
+function Posts() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -35,13 +35,13 @@ const Posts = () => {
             }}
             className="post-content"
           />
-          <a href={`/${post.id}`} className="see-more-link">
+          <a href={`./${post.id}`} className="see-more-link">
             Lire l'article
           </a>
         </article>
       ))}
     </div>
   );
-};
+}
 
 export default Posts;
